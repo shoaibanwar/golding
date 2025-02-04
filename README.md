@@ -15,6 +15,9 @@ The backend is built with **Node.js** and **Express**, following the **Domain-Dr
   - Another layer handles general errors that could occur throughout the application.
 - **Seeder**: A script is provided to seed the database with sample data for testing.
 - **Testing**: Basic test coverage is implemented for key API endpoints.
+  1. Successful login returns a valid token.
+  2. Accessing `/user/status` without authentication fails.
+  3. Accessing `/user/status` with a valid token returns user data.
 
 ### Frontend
 
@@ -61,31 +64,17 @@ Ensure you have the following installed:
    npm run seed
    ```
 
-5. **Start the backend server**
+5. **Run tests**
+
+   ```sh
+   npm test
+   ```
+
+6. **Start the backend server**
    ```sh
    npm start
    ```
    The server should be running on `http://localhost:5000`.
-
-#### Running Tests
-
-##### Install test dependencies:
-
-```sh
-npm install --save-dev jest supertest dotenv
-```
-
-##### Run tests:
-
-```sh
-npm test
-```
-
-##### Included Tests:
-
-1. Successful login returns a valid token.
-2. Accessing `/user/status` without authentication fails.
-3. Accessing `/user/status` with a valid token returns user data.
 
 ---
 
